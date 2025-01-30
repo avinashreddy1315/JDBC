@@ -7,6 +7,7 @@ public class Main {
         String url = "jdbc:mysql://127.0.0.1:3306/aliens";
         String uname = "root";
         String pass = "12345678";
+        String UserName = "Ali";
 
         // Load the MySQL JDBC driver
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -35,7 +36,7 @@ public class Main {
         } */
 
 
-        String query = "INSERT INTO students (userName) VALUES ('Ram');";
+        String query = "INSERT INTO students (userName) VALUES ('mango');";
 
         int count = st.executeUpdate(query);
         System.out.println(count);
