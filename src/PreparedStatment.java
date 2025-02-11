@@ -6,7 +6,7 @@ public class PreparedStatment {
         String url = "jdbc:mysql://127.0.0.1:3306/aliens";
         String uname = "root";
         String pass = "12345678";
-        String userName = "Krishna";
+        String userName = "murthi";
         String query = "INSERT INTO students (userName) VALUES (?)";
 
 
@@ -25,8 +25,24 @@ public class PreparedStatment {
         System.out.println(count + " row(s) inserted.");
 
 
+
+        Statement st1 = con.createStatement();
+
+        ResultSet rs = st1.executeQuery("select * from students");
+
+        while(rs.next()){
+            int id = rs.getInt(1);
+            String username = rs.getString(2);
+
+            System.out.println(id + " : " + username);
+
+        }
+
+
         st.close();
+        st1.close();
         con.close();
+        rs.close();
     }
 
 }
